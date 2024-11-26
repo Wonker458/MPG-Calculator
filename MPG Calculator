@@ -1,2 +1,7 @@
-asdds
-print("Hi arran straw")
+def validate_input(message, data_type):
+    while True:
+        try:
+            user_input = data_type(input(message))
+        except:
+            print("Invalid input")
+
