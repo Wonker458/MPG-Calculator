@@ -28,11 +28,13 @@ def fuel_litre_validation(fuel_litres):
         fuel_litres = validate_input("How much litres of fuel has your car used? ", int)  
         if fuel_litres < 1:
             print("Invalid input")
-        elif fuel_litres < 2000:
+        elif fuel_litres > 2000:
             print("Invalid input")
         else:
             return fuel_litres
 
+def tank_capacity_validation():
+    print()
 
 def carbrand():
     make = input(str("What brand of car do you drive?"))
@@ -47,7 +49,7 @@ def carmodel(make):
     model = input(str("What model of car do you drive?"))
     if type(model) == str:
         print("Thank you.")
-        car_store = make + "" + model
+        car_store = make + " " + model
         caryear(car_store)
     else:
         print("Please input a know car model")
@@ -57,7 +59,7 @@ def caryear(car_store):
     year = str(input("What year of car do you drive?"))
     if type(year) == str:
         print("Thank you.")
-        car_store = car_store + "" + year
+        car_store = car_store + " " + year
         print(car_store)
     else:
         print("Please input a number.")
