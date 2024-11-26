@@ -59,3 +59,5 @@ def main():
     print(distance)
     carbrand()
 carbrand()
+
+main()
