@@ -7,3 +7,24 @@ def validate_input(message, data_type):
             print("Invalid input")
     return user_input
 
+def distance_validation(unit_choice):
+    if unit_choice == "kilometres" or "km":
+        while True:
+            distance = validate_input("Enter the distance your vehicle has gone in kilometres: ", int)
+            if len(distance) > 3:
+                print("Invalid input")
+            else:
+                break
+    elif unit_choice == "miles" or "m":
+        while True:
+            distance = validate_input("Enter the distance your vehicle has gone in miles: ")
+            if len(distance) > 3:
+                print("Invalid input")
+            else: 
+                break
+
+def main():
+    unit_choice = validate_input("Do you want to measure distance in kilometres or miles? ", str)
+    distance_validation(unit_choice)
+main()
+
