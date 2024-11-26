@@ -33,8 +33,15 @@ def fuel_litre_validation(fuel_litres):
         else:
             return fuel_litres
 
-def tank_capacity_validation():
-    print()
+def tank_capacity_validation(tank_capacity, fuel_litres):
+    while True:
+        tank_capacity = validate_input("What is the tank capacity of your car in lites: ", int)
+        if tank_capacity < 1:
+            print("Invalid input")
+        elif tank_capacity > 2000:
+            print("Invalid input")
+        else:
+            return tank_capacity
 
 def carbrand():
     make = input(str("What brand of car do you drive?"))
@@ -72,6 +79,9 @@ def main():
     fuel_litres = 0
     fuel_litres = fuel_litre_validation(fuel_litres)
     print(fuel_litres)
+    tank_capacity = 0
+    tank_capacity = tank_capacity_validation(tank_capacity, fuel_litres)
+    print(tank_capacity)
     carbrand()
 
 
