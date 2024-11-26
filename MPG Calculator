@@ -23,6 +23,16 @@ def distance_validation(unit_choice):
             else: 
                 break
     return distance
+def fuel_litre_validation(fuel_litres):
+    while True:
+        fuel_litres = validate_input("How much litres of fuel has your car used? ", int)  
+        if fuel_litres < 1:
+            print("Invalid input")
+        elif fuel_litres < 2000:
+            print("Invalid input")
+        else:
+            return fuel_litres
+
 
 def carbrand():
     make = input(str("What brand of car do you drive?"))
@@ -57,7 +67,11 @@ def main():
     unit_choice = validate_input("Do you want to measure distance in kilometres or miles? ", str)
     distance = distance_validation(unit_choice)
     print(distance)
+    fuel_litres = 0
+    fuel_litres = fuel_litre_validation(fuel_litres)
+    print(fuel_litres)
     carbrand()
-carbrand()
+
+
 
 main()
