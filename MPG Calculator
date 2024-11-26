@@ -40,6 +40,8 @@ def tank_capacity_validation(tank_capacity, fuel_litres):
             print("Invalid input")
         elif tank_capacity > 2000:
             print("Invalid input")
+        elif tank_capacity > fuel_litres:
+            print("Invalid input")
         else:
             return tank_capacity
 
@@ -87,3 +89,4 @@ def main():
 
 
 main()
+
