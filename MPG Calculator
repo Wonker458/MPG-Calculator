@@ -2,6 +2,8 @@ def validate_input(message, data_type):
     while True:
         try:
             user_input = data_type(input(message))
+            break
         except:
             print("Invalid input")
+    return user_input
 
