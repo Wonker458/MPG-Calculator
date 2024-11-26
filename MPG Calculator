@@ -47,7 +47,7 @@ def carmodel(make):
     model = input(str("What model of car do you drive?"))
     if type(model) == str:
         print("Thank you.")
-        car_store = make + model
+        car_store = make + "" + model
         caryear(car_store)
     else:
         print("Please input a know car model")
@@ -57,7 +57,7 @@ def caryear(car_store):
     year = str(input("What year of car do you drive?"))
     if type(year) == str:
         print("Thank you.")
-        car_store = car_store + year
+        car_store = car_store + "" + year
         print(car_store)
     else:
         print("Please input a number.")
