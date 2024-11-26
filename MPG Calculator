@@ -44,6 +44,9 @@ def tank_capacity_validation(tank_capacity, fuel_litres):
             print("Invalid input")
         else:
             return tank_capacity
+def mpg_calculation(distance, fuel_litres):
+    mpg = int(distance) / fuel_litres
+    print(mpg)
 
 def carbrand():
     make = input(str("What brand of car do you drive?"))
@@ -84,6 +87,7 @@ def main():
     tank_capacity = 0
     tank_capacity = tank_capacity_validation(tank_capacity, fuel_litres)
     print(tank_capacity)
+    mpg_calculation(distance, fuel_litres)
     carbrand()
 
 
