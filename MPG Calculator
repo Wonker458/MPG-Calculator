@@ -10,27 +10,23 @@ def validate_input(message, data_type):
 def distance_validation(unit_choice):
     if unit_choice == "kilometres" or "km":
         while True:
-            distance = validate_input("Enter the distance your vehicle has gone in kilometres: ", int)
+            distance = validate_input("Enter the distance your vehicle has gone in kilometres: ", str)
             if len(distance) > 3:
                 print("Invalid input")
             else:
                 break
     elif unit_choice == "miles" or "m":
         while True:
-            distance = validate_input("Enter the distance your vehicle has gone in miles: ")
+            distance = validate_input("Enter the distance your vehicle has gone in miles: ", str)
             if len(distance) > 3:
                 print("Invalid input")
             else: 
                 break
-
-def main():
-    unit_choice = validate_input("Do you want to measure distance in kilometres or miles? ", str)
-    distance_validation(unit_choice)
-main()
+    return distance
 
 def carbrand():
     make = input(str("What brand of car do you drive?"))
-    if make == str:
+    if type(make) == str:
         print("Thank you.")
         carmodel(make)
     else:
@@ -39,21 +35,27 @@ def carbrand():
 
 def carmodel(make):
     model = input(str("What model of car do you drive?"))
-    if make == str:
+    if type(model) == str:
         print("Thank you.")
         car_store = make + model
-        carmodel(car_store)
+        caryear(car_store)
     else:
         print("Please input a know car model")
         carmodel()
 
 def caryear(car_store):
-    year = input(int("What year of car do you drive?"))
-    if year == int:
+    year = str(input("What year of car do you drive?"))
+    if type(year) == str:
         print("Thank you.")
         car_store = car_store + year
         print(car_store)
     else:
         print("Please input a number.")
         caryear()
+
+def main():
+    unit_choice = validate_input("Do you want to measure distance in kilometres or miles? ", str)
+    distance = distance_validation(unit_choice)
+    print(distance)
+    carbrand()
 carbrand()
