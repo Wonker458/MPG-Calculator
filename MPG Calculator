@@ -28,3 +28,32 @@ def main():
     distance_validation(unit_choice)
 main()
 
+def carbrand():
+    make = input(str("What brand of car do you drive?"))
+    if make == str:
+        print("Thank you.")
+        carmodel(make)
+    else:
+        print("Please input a know car brand")
+        carbrand()
+
+def carmodel(make):
+    model = input(str("What model of car do you drive?"))
+    if make == str:
+        print("Thank you.")
+        car_store = make + model
+        carmodel(car_store)
+    else:
+        print("Please input a know car model")
+        carmodel()
+
+def caryear(car_store):
+    year = input(int("What year of car do you drive?"))
+    if year == int:
+        print("Thank you.")
+        car_store = car_store + year
+        print(car_store)
+    else:
+        print("Please input a number.")
+        caryear()
+carbrand()
