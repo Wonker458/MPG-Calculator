@@ -8,20 +8,23 @@ def validate_input(message, data_type):
     return user_input
 
 def distance_validation(unit_choice):
-    if unit_choice == "kilometres" or "km":
+    print(unit_choice)
+    if unit_choice == "kilometres":
         while True:
             distance = validate_input("Enter the distance your vehicle has gone in kilometres: ", str)
             if len(distance) > 3:
                 print("Invalid input")
             else:
                 break
-    elif unit_choice == "miles" or "m":
+    elif unit_choice == "miles":
         while True:
             distance = validate_input("Enter the distance your vehicle has gone in miles: ", str)
             if len(distance) > 3:
                 print("Invalid input")
             else: 
                 break
+    else:
+        print("Invalid input")
     return distance
 def fuel_litre_validation(fuel_litres):
     while True:
@@ -46,7 +49,7 @@ def tank_capacity_validation(tank_capacity, fuel_litres):
             return tank_capacity
 def mpg_calculation(distance, fuel_litres):
     mpg = int(distance) / fuel_litres
-    print(mpg)
+    print(f"{mpg} miles per gallon")
 
 def carbrand():
     make = input(str("What brand of car do you drive?"))
